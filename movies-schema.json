@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "title",
+      "release_year",
+      "release_date",
+      "director",
+      "runtime_min",
+      "genres",
+      "countries",
+      "languages",
+      "box_office_usd",
+      "cast",
+      "soundtrack_by",
+      "awards",
+      "ratings"
+    ],
+    "properties": {
+      "title": { "type": "string" },
+      "release_year": { "type": "number" },
+      "release_date": { "type": "string" },
+      "director": { "type": "string" },
+      "runtime_min": { "type": "number" },
+      "genres": { "type": "array", "items": { "type": "string" } },
+      "countries": { "type": "array", "items": { "type": "string" } },
+      "languages": { "type": "array", "items": { "type": "string" } },
+      "box_office_usd": { "type": "number" },
+      "cast": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["actor", "role"],
+          "properties": {
+            "actor": { "type": "string" },
+            "role": { "type": "string" }
+          }
+        }
+      },
+      "soundtrack_by": { "type": "string" },
+      "awards": {
+        "type": "object",
+        "required": ["oscars", "bafta"],
+        "properties": {
+          "oscars": { "type": "number" },
+          "bafta": { "type": "number" }
+        }
+      },
+      "ratings": {
+        "type": "object",
+        "required": ["imdb", "metacritic"],
+        "properties": {
+          "imdb": { "type": "number" },
+          "metacritic": { "type": "number" }
+        }
+      }
+    }
+  }
+}

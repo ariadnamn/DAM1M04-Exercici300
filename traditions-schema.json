@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "name",
+      "country",
+      "location",
+      "time_of_year",
+      "origins",
+      "themes",
+      "activities",
+      "attendance_estimate",
+      "unesco_recognized"
+    ],
+    "properties": {
+      "name": { "type": "string" },
+      "country": { "type": "string" },
+      "location": { "type": "string" },
+      "time_of_year": {
+        "type": "object",
+        "required": ["month", "multi_day"],
+        "properties": {
+          "month": { "type": "string" },
+          "multi_day": { "type": "boolean" }
+        }
+      },
+      "origins": {
+        "type": "object",
+        "required": ["century", "background"],
+        "properties": {
+          "century": { "type": "number" },
+          "background": { "type": "string" }
+        }
+      },
+      "themes": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "activities": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["title", "description"],
+          "properties": {
+            "title": { "type": "string" },
+            "description": { "type": "string" }
+          }
+        }
+      },
+      "attendance_estimate": { "type": "number" },
+      "unesco_recognized": { "type": "boolean" }
+    }
+  }
+}
